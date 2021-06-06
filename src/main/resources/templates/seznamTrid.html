@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Seznam tříd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<h3>Seznam tříd</h3>
+<form th:action="@{/}" method="get">
+        <ul th:each="trida: ${trida}">
+        <li> <a th:href="@{/detailTridy/(id=${trida.id})} " th:text="${trida.nazev}"></a></li>
+    </ul>
+</form>
+</body>
+</html>

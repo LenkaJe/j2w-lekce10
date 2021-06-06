@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail třídy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+<h3>Detail třídy</h3>
+<form th:action="@{/tridaDetail}" method="get">
+<div th:text="${trida.nazev}">trida</div>
+<div th:text="${trida.tridniUcitel.celeJmeno}">trida</div>
+    <ul th:each="student: ${trida.studenti}">
+        <li><a th:href="@{/detailStudenta/(id=${student.id})} " th:text="${student.celeJmeno}"></a></li>
+    </ul>
+
+<a th:href="@{/}" type="button" class="btn btn-primary">Zpět na seznam tříd</a>
+</form>
+</body>
+</html>
